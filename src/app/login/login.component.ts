@@ -1,4 +1,5 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
+import { NgForm } from "@angular/forms";
 
 @Component({
   selector: "app-login",
@@ -7,6 +8,20 @@ import { Component, OnInit } from "@angular/core";
 })
 export class LoginComponent implements OnInit {
   constructor() {}
-  showPassword = false;
+
   ngOnInit() {}
+  @ViewChild("myForm") myForm: NgForm;
+  userName = "";
+  defaultCourse = "Angular";
+
+  onSubmit(form: NgForm) {
+    console.log(this.myForm);
+  }
+
+  defaultUser = "User";
+
+  usertypes = [
+    { id: "1", typeofuser: "Admin" },
+    { id: "2", typeofuser: "User" }
+  ];
 }

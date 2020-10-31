@@ -1,23 +1,40 @@
-<div class="login-content box box-banner">
-	<div class="grid-row">
-		<div class="col-12 form-group">
-			<label>Username</label>
-			<input type="text" class="form-control" name="username"  autofocus />
-            </div>
-		</div>
-		<div class="grid-row">
-			<div class="col-12 form-group">
-				<label>Password</label>
-				<div class="password">
-					<input type="{{showPassword ? '' : 'password'}}" class="form-control" name="password"/>
-					<i class="zmdi zmdi-eye" (click)="showPassword = true" *ngIf="!showPassword"></i>
-					<i class="zmdi zmdi-eye-off" (click)="showPassword = false" *ngIf="showPassword"></i>
+<div class="page-area">
+
+	<div class="row justify-content-center ">
+		<div class="col-md-6 bg-white rounded shadow py-3">
+			<!-- <form (ngSubmit)="onSubmit(myForm)" #myForm="ngForm"> -->
+			<form (ngSubmit)="onSubmit(myForm)" #myForm="ngForm">
+
+				<div class="form-group">
+					<label for="username">Username</label>
+					<input
+              type="text"
+              class="form-control"
+              id="username"
+              placeholder="Enter Username"
+              name="username"
+              [(ngModel)]="userName"
+              required
+            />
+					<small *ngIf="userName">Your UserName is {{userName}}</small>
 				</div>
-			</div>
-		</div>
-		<div class="grid-row">
-			<div class="col-12 button-ctnr">
-				<button type="submit" class="button button-primary button-width-full">Login</button>
-			</div>
+				<div class="form-group">
+					<label for="password">Password</label>
+					<input
+              type="password"
+              class="form-control"
+              id="password"
+              placeholder="Enter Password"
+              name="password"
+              ngModel
+              required
+            />
+				</div>
+
+					<button type="submit" class="btn btn-success">
+          Submit
+        </button>
+			</form>
 		</div>
 	</div>
+</div>

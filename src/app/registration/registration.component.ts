@@ -1,15 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from "@angular/core";
+import { NgForm } from "@angular/forms";
 
 @Component({
-  selector: 'app-registration',
-  templateUrl: './registration.component.html',
-  styleUrls: ['./registration.component.css']
+  selector: "app-registration",
+  templateUrl: "./registration.component.html",
+  styleUrls: ["./registration.component.css"]
 })
 export class RegistrationComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
+  @ViewChild("myForm") myForm: NgForm;
+  userName = "";
+  defaultCourse = "Angular";
 
-  ngOnInit() {
+  onSubmit(form: NgForm) {
+    console.log(this.myForm);
   }
 
+  defaultUser = "User";
+
+  usertypes = [
+    { id: "1", typeofuser: "User" },
+    { id: "2", typeofuser: "Admin" }
+  ];
+
+  ngOnInit() {}
 }
