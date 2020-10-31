@@ -10,8 +10,6 @@ import { RegistrationComponent } from "./registration/registration.component";
 import { HttpClientModule } from "@angular/common/http";
 import { RouterModule, Routes } from "@angular/router";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { DropdownModule, MultiSelectModule } from "primeng/primeng";
-import { MatCheckboxModule, MatTabsModule } from "@angular/material";
 
 const appRoutes: Routes = [
   { path: "home", component: AppComponent },
@@ -26,11 +24,7 @@ const appRoutes: Routes = [
     AppRoutingModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
-    BrowserAnimationsModule,
-    DropdownModule,
-    MultiSelectModule,
-    MatCheckboxModule,
-    MatTabsModule
+    BrowserAnimationsModule
   ],
   declarations: [
     AppComponent,
