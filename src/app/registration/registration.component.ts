@@ -14,9 +14,9 @@ export class RegistrationComponent implements OnInit {
   userName = "";
   defaultCourse = "Angular";
 
-  onSubmit(form: NgForm) {
-    console.log(this.myForm);
-  }
+  // onSubmit(form: NgForm) {
+  //   console.log(this.myForm);
+  // }
 
   defaultUser = "User";
 
@@ -25,5 +25,28 @@ export class RegistrationComponent implements OnInit {
     { id: "2", typeofuser: "Admin" }
   ];
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.resetForm();
+  }
+
+  resetForm(form?: NgForm) {
+    if (form != null) form.resetForm();
+    this.service.formData = {
+      FirstName: "",
+      LastName: "",
+      UserName: "",
+      Password: "",
+      Email: "",
+      ContactNo: "",
+      AreYouAdmin: null
+    };
+  }
+
+  onSubmit(form: NgForm) {
+    this.insertRecord(form);
+  }
+
+  insertRecord(form: NgForm) {
+    this.service.PostUser(form.value).subscribe(res => this.resetForm);
+  }
 }

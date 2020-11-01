@@ -41,7 +41,8 @@
               id="username"
               placeholder="Enter Username"
               name="username"
-              [(ngModel)]="userName"
+              [(ngModel)]="service.formData.UserName"
+              #username=ngModel
               required
             />
 							<small *ngIf="userName">Your UserName is {{userName}}</small>
@@ -55,7 +56,8 @@
               id="password"
               placeholder="Enter Password"
               name="password"
-              ngModel
+              [(ngModel)]="service.formData.Password"
+              #Password=ngModel
               required
             />
 				</div>
@@ -68,7 +70,7 @@
               id="email"
               placeholder="Enter Email"
               name="email"
-              ngModel
+              [(ngModel)]="service.formData.Email"
               required
               email
               #email="ngModel"
@@ -85,7 +87,8 @@
               id="contactnumber"
               placeholder="Enter Your Contact Number"
               name="contactnumber"
-              ngModel
+              [(ngModel)]="service.formData.ContactNo"
+              #contactnumber=ngModel
               required
             />
 				</div>
@@ -96,10 +99,11 @@
 										<input
               type="radio"
               id="{{users.id}}"
-              [ngModel]="defaultUser"
               name="users"
               value="{{users.typeofuser}}"
               class="custom-control-input"
+              [(ngModel)]="service.formData.AreYouAdmin"
+              #users=ngModel
             />
 										<label class="custom-control-label" for="{{users.id}}"
               >{{users.typeofuser}}</label>
