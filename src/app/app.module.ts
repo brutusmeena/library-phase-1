@@ -11,6 +11,8 @@ import { HttpClientModule } from "@angular/common/http";
 import { RouterModule, Routes } from "@angular/router";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
+import { UserService } from "./user.service";
+
 const appRoutes: Routes = [
   { path: "home", component: AppComponent },
   { path: "login", component: LoginComponent },
@@ -32,6 +34,7 @@ const appRoutes: Routes = [
     LoginComponent,
     RegistrationComponent
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: [UserService]
 })
 export class AppModule {}

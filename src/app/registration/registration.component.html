@@ -14,7 +14,8 @@
               id="firstName"
               placeholder="Enter Your First Name"
               name="firstName"
-              ngModel
+              [(ngModel)]="service.formData.FirstName"
+              #firstName=ngModel
               required
             />
 				</div>
@@ -26,7 +27,8 @@
               id="lastName"
               placeholder="Enter Your Last Name"
               name="LastName"
-              ngModel
+              [(ngModel)]="LastName"
+              #LastName=ngModel
               required
             />
 				</div>

@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from "@angular/core";
 import { NgForm } from "@angular/forms";
+import { UserService } from "../user.service";
 
 @Component({
   selector: "app-registration",
@@ -7,7 +8,7 @@ import { NgForm } from "@angular/forms";
   styleUrls: ["./registration.component.css"]
 })
 export class RegistrationComponent implements OnInit {
-  constructor() {}
+  constructor(public service: UserService) {}
 
   @ViewChild("myForm") myForm: NgForm;
   userName = "";
